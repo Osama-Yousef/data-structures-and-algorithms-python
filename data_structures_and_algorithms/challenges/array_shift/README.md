@@ -9,4 +9,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 built-in methods available to your language, return an array with the new value added at the middle index.
 
 ## Solution
-<img src="./data_structures_and_algorithms/challenges/array_shift/assests/array-shift.jpg">
+<img src="https://drive.google.com/file/d/1hbCDXQ5vNbqWAD9LKt-AZNELmWjVmpGK/view?usp=sharing">
