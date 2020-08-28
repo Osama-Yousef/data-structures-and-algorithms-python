@@ -26,3 +26,6 @@
 * `insertBefore(value, newVal)` function :  which add a new node with the given newValue immediately before the first value 
 
 * `insertAfter(value, newVal)` function :  which add a new node with the given newValue immediately after the first value node
+
+## Whiteboard
+* see it on this link : https://drive.google.com/file/d/1Lal8WI-6EaGiDVOd-v63jcUruogjxC5l/view?usp=sharing
