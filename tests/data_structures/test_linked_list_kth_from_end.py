@@ -2,8 +2,6 @@ from data_structures_and_algorithms.data_structures.linked_list_kth_from_end.lin
     LinkedList, Node 
 )
 
-import pytest
-
 """ Required Tests for kth from end challenge  """
 
 # Where k is greater than the length of the linked list
@@ -133,37 +131,11 @@ def test_insert_after_last():
     ll.append('blah3')
     ll.insert_after('blah3', 33)
     assert ll.head.next.next.next.data == 33
+###########################################################################################
+############## these tests for code challenge 7 ( linked list kth from the end )###########
 
-#### these tests for code challenge 7 ( linked list kth from the end )
 
-def test_kth_greater_than_list_length():
-    '''
-    test if k is greater than the length of the linked list
-    '''
-    ll = LinkedList()
-    ll.append('blah1')
-    with pytest.raises(ValueError):
-        ll.kth_from_end(2)
 
-def test_kth_equal_to_list_length():
-    '''test if  k and the length of the list are the same'''
-    ll = LinkedList()
-    ll.append('blah1')
-    with pytest.raises(ValueError):
-        ll.kth_from_end(1)
-
-def test_k_not_positive_integer():
-    '''test if  k is not a positive integer'''
-    ll = LinkedList()
-    ll.append('blah1')
-    with pytest.raises(ValueError):
-        ll.kth_from_end(-3)
-
-def test_linked_list_has_single_node():
-    ''' test if  the linked list is of a size 1'''
-    ll = LinkedList()
-    ll.append('blah1')
-    assert ll.kth_from_end(0) == 'blah1'
 
 def test_middle_k():
     """
@@ -179,10 +151,53 @@ def test_middle_k():
     ll.append('blah6')
     assert ll.kth_from_end(3) == 'blah3'
 
+def test_kth_from_end_0():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = 2
+    actual =ll.kth_from_end(0)
+    assert expected == actual
+
+def test_kth_from_end_2():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = 3
+    actual =ll.kth_from_end(2)
+    assert expected == actual
+
+def test_kth_from_end_6():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = "The Value Not Found"
+    actual =ll.kth_from_end(6)
+    assert expected == actual
+
+def test_kth_from_end_size_one():
+    ll = LinkedList()
+    ll.append(1)
+    expected = 1
+    actual =ll.kth_from_end(0)
+    assert expected == actual
 
 
-
-
+def test_kth_from_end_negative():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+    expected = "The Value Not Found"
+    actual =ll.kth_from_end(-2)
+    assert expected == actual
 
 
 
