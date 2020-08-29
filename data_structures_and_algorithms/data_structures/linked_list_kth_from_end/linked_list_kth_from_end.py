@@ -92,22 +92,24 @@ class LinkedList:
                 return
             current = current.next
         raise ValueError(f'{value} not found')
+    #################################################################
+    ################### for code challenge 7  #######################
     
     def kth_from_end(self, k):
         '''Return node value (k) from the end of the list'''
-        if k < 0:
-            raise ValueError(f'{k} is a negative value')
-        if k == 0:
-            if self.head:
-                return self.head.data
-        leader = self.head
-        follower = self.head
-        incrementer = 0
-        while leader.next:
-            leader = leader.next
-            incrementer += 1
-            if incrementer > k:
-                follower = follower.next
-        if k >= incrementer:
-            raise ValueError(f'{k} exceeds length of list')
-        return follower.data
+
+        try:
+                
+            n = -1
+            current = self.head
+            while current:
+                current = current.next
+                n = n + 1
+            if n >= k:
+                current = self.head
+                for i in range(n - k):
+                    current = current.next
+            return current.data
+        except:
+            return "The Value Not Found"
+
